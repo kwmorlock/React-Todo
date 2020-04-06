@@ -15,11 +15,22 @@ class TodoForm extends React.Component {
     render() {
         return (
         
-         <p> {this.props} </p>
+         <form>
+             <input
+
+          type="text"
+          name="todo"
+          value={this.state.NewToDo}
+          onChange={this.handleChanges}
+             
+             />
+             <button onClick={this.handleAdd} >Create</button>
+             <button onClick={this.handleClear} >Destroy</button>
+         </form>
     
   
         );
       };
 }
 
-// export default;
+export default TodoForm;
