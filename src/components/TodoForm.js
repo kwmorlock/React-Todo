@@ -1,5 +1,15 @@
-// import React from 'react';
+import React from 'react';
 
-// class TodoComponent extends React.Component {}
+class TodoForm extends React.Component {
+
+    render() {
+        return (
+          <div>
+          {this.props}
+    
+          </div>
+        );
+      };
+}
 
 // export default;
