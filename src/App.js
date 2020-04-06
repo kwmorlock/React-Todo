@@ -27,6 +27,20 @@ class App extends React.Component {
   
   };
   }
+
+  addToDo = task => {
+const newItem = {
+  task: task,
+  id: uuidv4(),
+  completed: false,
+}
+this.setState({
+  //concat adds and returns new array plus old items
+  todos: this.state.todos.concat(newItem)
+})
+  };
+
+
   
   render() {
     return (
