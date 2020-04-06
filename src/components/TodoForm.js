@@ -9,7 +9,7 @@ class TodoForm extends React.Component {
     }
     handleChanges = e => {
         e.preventDefault();
-        this.setState({newTodo: e.target.value})
+        this.setState({newToDo: e.target.value})
     }
 
     render() {
@@ -20,11 +20,15 @@ class TodoForm extends React.Component {
 
           type="text"
           name="todo"
-          value={this.state.NewToDo}
+          value={this.state.newToDo}
           onChange={this.handleChanges}
              
              />
-             <button onClick={this.handleAdd} >Create</button>
+             <button onClick={(e) => {
+                 e.preventDefault();
+                 this.props.addToDo(this.state.newToDo)
+
+             } } >Create</button>
              <button onClick={this.handleClear} >Destroy</button>
          </form>
     

@@ -47,7 +47,7 @@ this.setState({
       <div>
         <h2>Welcome to Todo!</h2>
         <TodoList todos={this.state.todos}/>
-        <TodoForm todos={this.state.todos}/>
+        <TodoForm addToDo={this.addToDo}/>
       </div>
     );
   }
