@@ -1,14 +1,15 @@
 import React from "react";
 
-const Item = props => {
-  return (
-    <div
-      onClick={() => props.toggleItem(props.item.id)}
-      className={`item${props.item.purchased ? " purchased" : ""}`}
-    >
-      <p>{props.item.name}</p>
-    </div>
-  );
-};
+class Todo extends React.Component {
+//extends is a class that comes after extends
+//has all the variables and methods that a react component has
 
-export default Item;
+render() {
+    return (
+    <p>{this.props.todo}</p>
+    )
+  }
+}
+
+
+export default Todo;
