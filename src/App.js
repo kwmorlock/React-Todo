@@ -20,7 +20,7 @@ class App extends React.Component {
         {
           task: 'Bake Cookies',
           id: uuidv4(),
-          completed: false
+          completed: true
         }],
         newToDo: "",
       // import of v4 after npm install uuid to assign unique numbers and then assigned to id
@@ -40,13 +40,17 @@ this.setState({
 })
   };
 
+  toggleComplete = id => {
+
+  }
+
 
   
   render() {
     return (
       <div>
         <h2>Welcome to Todo!</h2>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos} toggleComplete={this.toggleComplete}/>
         <TodoForm addToDo={this.addToDo}/>
       </div>
     );
