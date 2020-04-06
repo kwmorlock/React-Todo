@@ -1,4 +1,5 @@
 import React from 'react';
+import {v4 as uuidv4} from "uuid";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -7,13 +8,28 @@ class App extends React.Component {
   
   constructor() {
     super();
-    this.state = {}
+    this.state = {todos:[
+      
+        {
+          task: 'Organize Garage',
+          id: uuidv4(),
+          completed: false
+        },
+        {
+          task: 'Bake Cookies',
+          id: uuidv4(),
+          completed: false
+        }],
+        newToDo: "",
+      // import of v4 after npm install uuid to assign unique numbers and then assigned to id
+  
+  };
   }
   
   render() {
     return (
       <div>
-        <h2>Welcome to HELL!</h2>
+        <h2>Welcome to Todo!</h2>
       </div>
     );
   }
