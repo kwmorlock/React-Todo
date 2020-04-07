@@ -25,8 +25,9 @@ class TodoForm extends React.Component {
              <button onClick={(e) => {
                  e.preventDefault();
                  this.props.addToDo(this.state.newToDo);
+                 this.setState({newToDo: ""})
                 }} > Create </button>
-             <button onClick={this.handleClear}>Destroy</button>
+             <button onClick={this.props.clearCompleted}>Destroy</button>
          </form>
     
   

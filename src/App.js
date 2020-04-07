@@ -58,7 +58,7 @@ this.setState({
   clearCompleted = e => {
     e.preventDefault();
     this.setState({
-      todoList: this.state.todoList.filter(task => task.completed)
+      todos: this.state.todos.filter(task => !task.completed)
     })
   }
 
@@ -68,7 +68,7 @@ this.setState({
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todos={this.state.todos} toggleComplete = {this.toggleComplete} />
-        <TodoForm addToDo={this.addToDo} />
+        <TodoForm addToDo={this.addToDo} clearCompleted ={this.clearCompleted} />
       </div>
     );
   }
