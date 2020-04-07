@@ -1,7 +1,7 @@
 import React from 'react';
 import {v4 as uuidv4} from "uuid";
-import TodoList from "./components/TodoList"
-import TodoForm from "./components/TodoForm"
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -20,7 +20,7 @@ class App extends React.Component {
         {
           task: 'Bake Cookies',
           id: uuidv4(),
-          completed: true
+          completed: false
         }],
         newToDo: "",
       // import of v4 after npm install uuid to assign unique numbers and then assigned to id
@@ -28,7 +28,7 @@ class App extends React.Component {
   };
   }
 
-  addToDo = task => {
+  addToDo = (task) => {
 const newItem = {
   task: task,
   id: uuidv4(),
@@ -41,17 +41,34 @@ this.setState({
   };
 
   toggleComplete = id => {
+    this.setState(
+  {
+    todos:this.state.todos.map(item =>{
+      if (item.id === id){
+        return{...item, completed: !item.completed}
 
+      }
+      else{
+        return item
+      }
+    })
+  })
+  }
+  
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      todoList: this.state.todoList.filter(task => task.completed)
+    })
   }
 
 
-  
   render() {
     return (
       <div>
-        <h2>Welcome to Todo!</h2>
-        <TodoList todos={this.state.todos} toggleComplete={this.toggleComplete}/>
-        <TodoForm addToDo={this.addToDo}/>
+        <h2>Welcome to your Todo App!</h2>
+        <TodoList todos={this.state.todos} toggleComplete = {this.toggleComplete} />
+        <TodoForm addToDo={this.addToDo} />
       </div>
     );
   }

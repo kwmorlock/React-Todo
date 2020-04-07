@@ -1,20 +1,19 @@
 import React from 'react';
 
 class TodoForm extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            newToDo: ""
-        }
+            newToDo: "",
+        };
     }
-    handleChanges = e => {
+    handleChanges = (e) => {
         e.preventDefault();
-        this.setState({newToDo: e.target.value})
-    }
+        this.setState({newToDo: e.target.value});
+    };
 
     render() {
         return (
-        
          <form>
              <input
 
@@ -22,19 +21,17 @@ class TodoForm extends React.Component {
           name="todo"
           value={this.state.newToDo}
           onChange={this.handleChanges}
-             
-             />
+              />
              <button onClick={(e) => {
                  e.preventDefault();
-                 this.props.addToDo(this.state.newToDo)
-
-             } } >Create</button>
-             <button onClick={this.handleClear} >Destroy</button>
+                 this.props.addToDo(this.state.newToDo);
+                }} > Create </button>
+             <button onClick={this.handleClear}>Destroy</button>
          </form>
     
   
         );
-      };
+      }
 }
 
 export default TodoForm;
