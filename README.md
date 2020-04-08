@@ -12,7 +12,7 @@ We're going to practice building a stateful class component with this project. E
 ## Instructions
 
 - Your job is to write the components to complete the Todo List application.
-- Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is.
+- Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is..
 
 ![Todo App MVP](todo.gif)
 
